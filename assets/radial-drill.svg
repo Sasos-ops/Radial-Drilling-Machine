@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-label="Radial drilling machine illustration">
+<rect width="600" height="420" fill="#1f2a33"/>
+<rect x="40" y="370" width="520" height="30" fill="#3b4854"/>
+<rect x="70" y="340" width="260" height="30" fill="#f2a900"/>
+<rect x="110" y="40" width="46" height="300" fill="#f2a900"/>
+<rect x="95" y="20" width="76" height="30" fill="#c98a00"/>
+<rect x="150" y="80" width="380" height="44" fill="#e0e6eb"/>
+<rect x="150" y="124" width="380" height="10" fill="#9aa7b2"/>
+<rect x="400" y="70" width="90" height="100" fill="#f2a900"/>
+<rect x="436" y="170" width="18" height="130" fill="#c3ccd4"/>
+<polygon points="438,300 452,300 445,340" fill="#8a96a1"/>
+<rect x="380" y="335" width="130" height="14" fill="#5a6773"/>
+<circle cx="133" cy="190" r="8" fill="#1f2a33"/>
+</svg>
