@@ -1,0 +1,11 @@
+{
+  "documents": [
+    {
+      "title": "Sample Operating Manual (replace me)",
+      "category": "operating-manuals",
+      "file": "documents/operating-manuals/sample-operating-manual.pdf",
+      "date": "2025-01-01",
+      "description": "Example entry. Delete once real documents are added."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+:root{--yellow:#f2a900;--dark:#1f2a33;--steel:#3b4854;--light:#eef1f4}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--light);color:#222;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.site-header{background:var(--dark);border-bottom:4px solid var(--yellow);position:sticky;top:0;z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.brand{color:#fff;font-weight:700;text-decoration:none;padding:14px 0}
+.brand span{color:var(--yellow);font-weight:400;margin-left:6px}
+nav a{color:#dfe5ea;text-decoration:none;padding:14px 10px;display:inline-block;font-size:.95rem}
+nav a:hover{color:var(--yellow)}
+#menu-toggle{display:none;background:none;border:1px solid var(--yellow);color:var(--yellow);font-size:1.3rem;padding:2px 10px;cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--dark),var(--steel));color:#fff;padding:40px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.hero h1{margin-top:0;border-left:6px solid var(--yellow);padding-left:14px}
+.hero img{width:100%;border:3px solid var(--yellow);border-radius:6px}
+#search{width:100%;padding:12px;font-size:1rem;border:2px solid var(--yellow);border-radius:4px}
+section.cat{background:#fff;margin:24px 0;padding:16px 20px;border-top:4px solid var(--yellow);border-radius:4px;box-shadow:0 1px 4px #0002;scroll-margin-top:70px}
+section.cat h2{margin:0 0 8px;color:var(--dark)}
+.doc{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #ddd}
+.doc p{margin:0}.muted{color:#667}
+button.view,#viewer-close{background:var(--yellow);border:0;padding:8px 14px;font-weight:700;cursor:pointer;border-radius:3px}
+.howto{background:#fff;padding:16px 20px;margin:24px 0;border-radius:4px}
+code{background:#e6e9ec;padding:1px 5px}
+footer{background:var(--dark);color:#aab;padding:16px 0;text-align:center}
+.viewer{position:fixed;inset:0;background:#000d;z-index:50;display:flex;flex-direction:column}
+.viewer[hidden]{display:none}
+.viewer-bar{background:var(--dark);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;gap:10px}
+.viewer-bar a{color:var(--yellow);margin-right:12px}
+.viewer iframe{flex:1;border:0;background:#fff}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr}
+  #menu-toggle{display:block}
+  nav{display:none;width:100%}nav.open{display:block}
+  nav a{display:block;border-top:1px solid #ffffff22}
+  .doc{flex-direction:column;align-items:flex-start}
+}
