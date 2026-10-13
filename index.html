@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radial Drilling Machine | Documentation Portal</title>
+<meta name="description" content="Centralized documentation hub for the Radial Drilling Machine: manuals, drawings, maintenance, inspection, spare parts, procedures and safety.">
+<style>
+:root{--steel:#1c2229;--steel2:#2b343d;--accent:#f5a300;--text:#e8ecef;--muted:#9aa7b2;--bg:#f3f4f6;--card:#fff;--ink:#1c2229}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;background:var(--bg);color:var(--ink)}
+a{color:inherit}
+.nav{position:sticky;top:0;z-index:10;background:var(--steel);border-bottom:3px solid var(--accent)}
+.nav .in{max-width:1100px;margin:auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.brand{color:#fff;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.brand span{color:var(--accent)}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px}
+.nav ul a{color:var(--muted);text-decoration:none;font-size:.9rem}
+.nav ul a:hover,.nav ul a:focus{color:var(--accent)}
+.hero{background:linear-gradient(135deg,rgba(28,34,41,.95),rgba(43,52,61,.88)),repeating-linear-gradient(45deg,#2b343d 0 12px,#252d35 12px 24px);color:var(--text);padding:72px 20px}
+.hero .in{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{display:inline-block;color:var(--accent);border:1px solid var(--accent);padding:2px 12px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;border-radius:3px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:16px 0}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:34em}
+.btn{display:inline-block;margin:8px 10px 0 0;padding:12px 24px;border-radius:4px;font-weight:600;text-decoration:none;background:var(--accent);color:#111;border:2px solid var(--accent)}
+.btn.alt{background:transparent;color:#fff;border-color:#5b6772}
+.btn:hover,.btn:focus{filter:brightness(1.1)}
+.hero img{width:100%;height:auto;border-radius:6px;border:4px solid var(--steel2);box-shadow:0 12px 30px rgba(0,0,0,.45);background:#fff}
+section.block{max-width:1100px;margin:auto;padding:56px 20px 8px}
+h2{font-size:1.7rem;margin:0 0 8px}
+h2::after{content:"";display:block;width:56px;height:4px;background:var(--accent);margin-top:8px}
+.lead{color:#52606b;max-width:46em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:28px}
+.card{background:var(--card);border-top:4px solid var(--accent);border-radius:6px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-size:1.1rem}
+.card p{margin:0 0 14px;color:#52606b;font-size:.95rem;flex:1}
+.card a.link{font-weight:600;text-decoration:none;color:#9a6400}
+.card a.link:hover{text-decoration:underline}
+.card .soon{font-size:.85rem;color:#8a949c;font-style:italic}
+.icon{font-size:1.8rem;margin-bottom:6px}
+.safety{background:#fff7e0;border-left:6px solid var(--accent);padding:18px 22px;border-radius:4px;margin-top:28px}
+footer{margin-top:56px;background:var(--steel);color:var(--muted);text-align:center;padding:28px 20px;font-size:.9rem}
+footer a{color:var(--accent)}
+@media(max-width:800px){.hero .in{grid-template-columns:1fr}.hero{padding:44px 20px}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+<div class="in">
+<a class="brand" href="#top">Radial <span>Drill</span> Docs</a>
+<ul>
+<li><a href="#manuals">Manuals</a></li>
+<li><a href="#drawings">Drawings</a></li>
+<li><a href="#maintenance">Maintenance</a></li>
+<li><a href="#inspection">Inspection</a></li>
+<li><a href="#spares">Spare Parts</a></li>
+<li><a href="#procedures">Procedures</a></li>
+<li><a href="#safety">Safety</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero" id="top">
+<div class="in">
+<div>
+<span class="tag">Documentation Portal</span>
+<h1>Radial Drilling Machine</h1>
+<p>One central place for manuals, drawings, maintenance records, inspection reports, spare parts information, operating procedures and safety documents.</p>
+<a class="btn" href="#documents">Browse Documents</a>
+<a class="btn alt" href="#safety">Safety First</a>
+</div>
+<img src="Radial%20drilling%20machine%20pic.png" alt="Radial drilling machine">
+</div>
+</header>
+
+<main>
+<section class="block" id="documents">
+<h2>Documentation Areas</h2>
+<p class="lead">Select an area to open the available documents. Areas without published files are marked as coming soon.</p>
+<div class="grid">
+<article class="card" id="manuals"><div class="icon" aria-hidden="true">📘</div><h3>Manuals</h3><p>Manufacturer manual with specifications, installation and service information.</p><a class="link" href="Radial%20Drill%20Machine%20-%20Manufacturer%20Manual.pdf">Manufacturer Manual (PDF) →</a></article>
+<article class="card" id="drawings"><div class="icon" aria-hidden="true">📐</div><h3>Drawings</h3><p>Assembly, layout and component drawings.</p><span class="soon">Coming soon</span></article>
+<article class="card" id="maintenance"><div class="icon" aria-hidden="true">🛠️</div><h3>Maintenance Records</h3><p>Planned maintenance schedule and service history.</p><a class="link" href="Radial%20Drill%20Machine%20-%20Maintenance%20Schedule.docx">Maintenance Schedule (DOCX) →</a></article>
+<article class="card" id="inspection"><div class="icon" aria-hidden="true">🔍</div><h3>Inspection Reports</h3><p>Routine inspection checklist and recorded findings.</p><a class="link" href="Radial%20Drill%20Machine%20-%20Inspection%20Checklist.xlsx">Inspection Checklist (XLSX) →</a></article>
+<article class="card" id="spares"><div class="icon" aria-hidden="true">⚙️</div><h3>Spare Parts</h3><p>Parts lists, part numbers and supplier information.</p><span class="soon">Coming soon</span></article>
+<article class="card" id="procedures"><div class="icon" aria-hidden="true">📋</div><h3>Operating Procedures</h3><p>Step-by-step instructions for safe and correct operation.</p><a class="link" href="Radial%20Drill%20Machine%20-%20Operating%20Procedure.docx">Operating Procedure (DOCX) →</a></article>
+<article class="card" id="safety"><div class="icon" aria-hidden="true">🦺</div><h3>Safety Documents</h3><p>Risk assessment and safety guidance for operators and maintenance staff.</p><a class="link" href="Radial%20Drill%20Machine%20-%20Risk%20Assessment.xls">Risk Assessment (XLS) →</a></article>
+</div>
+<div class="safety"><strong>Safety notice:</strong> Read the operating procedure and risk assessment before using or servicing the machine. Isolate power and follow lock-out procedures before maintenance.</div>
+</section>
+</main>
+
+<footer>
+Radial Drilling Machine Documentation &middot; <a href="https://github.com/Sasos-ops/Radial-Drilling-Machine">View repository on GitHub</a>
+</footer>
+</body>
+</html>
