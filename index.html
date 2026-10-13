@@ -10,11 +10,15 @@
     .banner h1 { position: absolute; bottom: 0; left: 0; right: 0; margin: 0; padding: 20px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.75)); }
     main { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; }
     p.desc { font-size: 1.05rem; }
-    ul.files { list-style: none; padding: 0; }
-    ul.files li { background: #fff; border: 1px solid #d0d7de; border-radius: 6px; margin: 8px 0; }
-    ul.files a { display: block; padding: 14px 16px; text-decoration: none; color: #0969da; }
-    ul.files a:hover { background: #f0f6ff; }
-    .type { float: right; color: #656d76; font-size: .85rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .card { display: flex; flex-direction: column; background: #fff; border: 1px solid #d0d7de; border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow .15s, transform .15s; }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.15); transform: translateY(-2px); }
+    .thumb { height: 110px; display: flex; align-items: center; justify-content: center; background: #f0f3f6; }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .icon { width: 64px; height: 72px; border-radius: 6px; color: #fff; font-weight: 700; font-size: .95rem; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; box-sizing: border-box; clip-path: polygon(0 0, 70% 0, 100% 22%, 100% 100%, 0 100%); }
+    .meta { padding: 12px 14px; }
+    .name { font-weight: 600; color: #0969da; word-break: break-word; }
+    .ext { color: #656d76; font-size: .8rem; margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -23,14 +27,78 @@
   </div>
   <main>
     <p class="desc">Centralized repository for Radial Drill Machine documentation, including manuals, drawings, maintenance records, inspection reports, spare parts information, operating procedures, and safety documents.</p>
-    <h2>Documents</h2>
-    <ul class="files">
-      <li><a href="Radial%20Drill%20Machine%20-%20Manufacturer%20Manual.pdf">Manufacturer Manual <span class="type">PDF</span></a></li>
-      <li><a href="Radial%20Drill%20Machine%20-%20Operating%20Procedure.docx">Operating Procedure <span class="type">DOCX</span></a></li>
-      <li><a href="Radial%20Drill%20Machine%20-%20Maintenance%20Schedule.docx">Maintenance Schedule <span class="type">DOCX</span></a></li>
-      <li><a href="Radial%20Drill%20Machine%20-%20Inspection%20Checklist.xlsx">Inspection Checklist <span class="type">XLSX</span></a></li>
-      <li><a href="Radial%20Drill%20Machine%20-%20Risk%20Assessment.xls">Risk Assessment <span class="type">XLS</span></a></li>
-    </ul>
+    <h2>Files</h2>
+    <div class="grid" id="files"></div>
+    <noscript><p>Enable JavaScript to see the file list, or browse the files in the repository.</p></noscript>
+    <script>
+      // To add a file manually, add its exact name here. Files in the repo root
+      // are also picked up automatically via the GitHub API when available.
+      var REPO = "Sasos-ops/Radial-Drilling-Machine";
+      var HOME = "index.html";
+      var FILES = [
+        "README.md",
+        "Radial Drill Machine - Inspection Checklist.xlsx",
+        "Radial Drill Machine - Maintenance Schedule.docx",
+        "Radial Drill Machine - Manufacturer Manual.pdf",
+        "Radial Drill Machine - Operating Procedure.docx",
+        "Radial Drill Machine - Risk Assessment.xls",
+        "Radial drilling machine pic.png"
+      ];
+      var TYPES = {
+        pdf: ["#d32f2f", "PDF"], doc: ["#1565c0", "DOC"], docx: ["#1565c0", "DOCX"],
+        xls: ["#2e7d32", "XLS"], xlsx: ["#2e7d32", "XLSX"], md: ["#6a1b9a", "MD"],
+        txt: ["#546e7a", "TXT"]
+      };
+      var IMAGES = ["png", "jpg", "jpeg", "gif", "svg", "webp"];
+
+      function render(names) {
+        var grid = document.getElementById("files");
+        grid.textContent = "";
+        names.filter(function (n) { return n !== HOME; }).sort().forEach(function (name) {
+          var ext = name.indexOf(".") > -1 ? name.split(".").pop().toLowerCase() : "";
+          var a = document.createElement("a");
+          a.className = "card";
+          a.href = encodeURIComponent(name);
+          var thumb = document.createElement("div");
+          thumb.className = "thumb";
+          if (IMAGES.indexOf(ext) > -1) {
+            var img = document.createElement("img");
+            img.src = encodeURIComponent(name);
+            img.alt = "";
+            img.loading = "lazy";
+            thumb.appendChild(img);
+          } else {
+            var t = TYPES[ext] || ["#78909c", ext ? ext.toUpperCase().slice(0, 4) : "FILE"];
+            var icon = document.createElement("div");
+            icon.className = "icon";
+            icon.style.background = t[0];
+            icon.textContent = t[1];
+            thumb.appendChild(icon);
+          }
+          var meta = document.createElement("div");
+          meta.className = "meta";
+          var n = document.createElement("div");
+          n.className = "name";
+          n.textContent = name.replace(/^Radial Drill Machine - /, "").replace(/\.[^.]+$/, "");
+          var e = document.createElement("div");
+          e.className = "ext";
+          e.textContent = (ext || "file").toUpperCase();
+          meta.appendChild(n);
+          meta.appendChild(e);
+          a.appendChild(thumb);
+          a.appendChild(meta);
+          grid.appendChild(a);
+        });
+      }
+
+      render(FILES);
+      fetch("https://api.github.com/repos/" + REPO + "/contents/")
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (items) {
+          render(items.filter(function (i) { return i.type === "file"; }).map(function (i) { return i.name; }));
+        })
+        .catch(function () {});
+    </script>
   </main>
 </body>
 </html>
