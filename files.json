@@ -1,0 +1,15 @@
+{
+  "repo": "Sasos-ops/Radial-Drilling-Machine",
+  "branch": "main",
+  "banner": "Radial drilling machine pic.png",
+  "description": "Centralized repository for Radial Drill Machine documentation, including manuals, drawings, maintenance records, inspection reports, spare parts information, operating procedures, and safety documents.",
+  "files": [
+    { "file": "Radial Drill Machine - Manufacturer Manual.pdf", "title": "Manufacturer Manual", "description": "Official manufacturer manual." },
+    { "file": "Radial Drill Machine - Operating Procedure.docx", "title": "Operating Procedure", "description": "Step-by-step operating procedure." },
+    { "file": "Radial Drill Machine - Maintenance Schedule.docx", "title": "Maintenance Schedule", "description": "Planned maintenance schedule." },
+    { "file": "Radial Drill Machine - Inspection Checklist.xlsx", "title": "Inspection Checklist", "description": "Inspection checklist spreadsheet." },
+    { "file": "Radial Drill Machine - Risk Assessment.xls", "title": "Risk Assessment", "description": "Safety risk assessment." },
+    { "file": "Radial drilling machine pic.png", "title": "Machine Picture", "description": "Photo of the radial drilling machine." },
+    { "file": "README.md", "title": "README", "description": "Repository overview." }
+  ]
+}
